@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Circle Drawer</h5>
+    <div class="card-circle-drawer__container">
+      <div class="card-circle-drawer__buttons">
+        <button class="btn btn-warning" (click)="undo()" [disabled]="actualStatePointer === 0">UNDO</button>
+        <button class="btn btn-warning" (click)="redo()" [disabled]="actualStatePointer === state.length">REDO</button>
+      </div>
+      <div class="card-circle-drawer-content">
+        <svg #svgArea (click)="svgAreaClickedHandler($event)" [class.disabled]="selectedCircle"></svg>
+        <form class="card-circle-drawer-content__form" #form *ngIf="selectedCircle">
+          <button class="card-circle-drawer-content__close-button" type="button" (click)="hideForm()">x</button>
+          <div class="card-circle-drawer-content__radio-input">
+            <label for="diameter">Adjust diameter of circle at ({{ selectedCircle.circle.cx.baseVal.value }}, {{ selectedCircle.circle.cy.baseVal.value }}).</label>
+            <input id="diameter" type="range" step="1" min="8" max="100"
+                   [ngModel]="selectedCircle.circle.r.baseVal.value" (ngModelChange)="setDiameter($event)" [ngModelOptions]="{ standalone: true }"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

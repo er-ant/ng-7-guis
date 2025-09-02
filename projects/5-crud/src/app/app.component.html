@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">CRUD</h5>
+    <div class="card-crud__container">
+      <div>
+        <span>Filter prefix:</span>
+        <input [ngModel]="filterValue" (ngModelChange)="onFilterChanged($event)"> 
+      </div>
+      <div class="card-crud-content">
+        <table class="table card-crud-content__table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of displayedClients" (click)="selectClient(client)" [class.table-active]="client === selectedClient">
+              <th>{{ client.id }}</th>
+              <th>{{ client.name | titlecase }}</th>
+              <th>{{ client.surname | titlecase }}</th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="card-crud-content__form">
+          <div>
+            <span>Name:</span>
+            <input [(ngModel)]="name"> 
+          </div>
+          <div>
+            <span>Surname:</span>
+            <input [(ngModel)]="surname"> 
+          </div>          
+        </div>
+      </div>
+      <div class="card-crud__buttons">
+        <button class="btn btn-success" (click)="create()" [disabled]="!name || !surname || !isClientUnique()">CREATE</button>
+        <button class="btn btn-secondary" (click)="update()" [disabled]="!selectedClient">UPDATE</button>
+        <button class="btn btn-danger" (click)="delete()" [disabled]="!selectedClient">DELETE</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Flight Booker</h5>
+    <div class="card-booker__container">
+      <form [formGroup]="bookingForm" (ngSubmit)="onBook()">
+        <div>Celsius</div>
+        <select class="form-control" formControlName="way">
+          <option *ngFor="let way of wayOptions" [value]="way.value">{{ way.label }}</option>
+        </select>      
+        <div>Departure Date (format: DD.MM.YYYY):</div>
+        <input class="form-control" [class.is-invalid]="bookingForm.get('departureDate')?.invalid" formControlName="departureDate">      
+        <div>Return Date (format: DD.MM.YYYY):</div>
+        <input class="form-control" [class.is-invalid]="bookingForm.get('returnDate')?.invalid || bookingForm.errors?.['departureEarlierReturn']" formControlName="returnDate">
+        <button class="card-booker__submit" type="submit" [disabled]="bookingForm.invalid">BOOK</button>
+      </form>
+    </div>
+  </div>
+</div>

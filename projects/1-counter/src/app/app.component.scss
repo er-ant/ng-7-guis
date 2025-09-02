@@ -1,0 +1,10 @@
+.card {
+  margin: auto;
+}
+
+.card-counter {
+  &__container {
+    display: flex;
+    gap: 10px;
+  }
+}

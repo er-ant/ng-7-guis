@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:counter": "ng serve 1-counter --port=4200",
+    "start:temperature-converter": "ng serve 2-temperature-converter --port=4300",
+    "start:flight-booker": "ng serve 3-flight-booker --port=4400",
+    "start:timer": "ng serve 4-timer --port=4500",
+    "start:crud": "ng serve 5-CRUD --port=4600",
+    "start:circle-drawer": "ng serve 6-circle-drawer --port=4700",
+    "start:cells": "ng serve 7-cells --port=4800",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,13 +24,17 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "bootstrap": "^5.3.1",
+    "d3": "^7.9.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^16.2.0",
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.2.0",
+    "@types/d3": "^7.4.3",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",

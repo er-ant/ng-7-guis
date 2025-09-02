@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  padding: 10px;
+}
+
+input {
+  border: none;
+  outline: none;
+    width: 100%;
+    background: transparent;
+}
+
+table {
+  text-align: center;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody tr td:first-child {
+  position: sticky;
+  left: 0;
+}
+
+tbody tr td:not(:first-child) {
+  min-width:100px;
+}

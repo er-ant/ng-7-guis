@@ -1,0 +1,42 @@
+.card {
+  margin: auto;
+}
+
+.card-crud {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__buttons {
+    button {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.card-crud-content {
+  display: flex;
+
+  &__form {
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input {
+      max-width: 160px;
+    }
+  }
+
+  &__table {
+    margin-right: 10px;
+    min-height: 200px;
+
+    tr {
+      cursor: pointer;
+    }
+  }
+}

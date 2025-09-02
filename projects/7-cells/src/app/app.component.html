@@ -1,0 +1,21 @@
+<table class="table table-striped table-bordered table-hover table-responsive-lg">
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let columnLetter of columnsLetters">
+        {{ columnLetter }}
+      </th>
+    </tr>
+  </thead>
+  <tbody [formGroup]="spreadsheetForm">
+    <tr *ngFor="let row of rowsNumbers">
+      <td>
+        {{ row }}
+      </td>
+      <td *ngFor="let columnLetter of columnsLetters" [formArrayName]="columnLetter">
+        <input appCellReadonlyHandler [formControlName]="row"
+               (dblclick)="$event.preventDefault(); changeCellViewMode(columnLetter, row)" (blur)="changeCellViewMode(columnLetter, row)"/>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+.card {
+  margin: auto;
+}
+
+.card-timer {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__progress,
+  &__duration {
+    vertical-align: middle;
+  }
+
+  &__reset {
+    margin-top: 10px;
+    width: 100%;
+  }
+}

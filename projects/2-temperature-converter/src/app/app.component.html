@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Temperature Converter</h5>
+    <div class="card-converter__container">
+      <input type="number" step=".01" class="form-control" [ngModel]="cTemp" (ngModelChange)="tempCCalculation($event)">
+      <span>Celsius</span>
+      <span>=</span>
+      <input type="number" step=".01" class="form-control" [ngModel]="fTemp" (ngModelChange)="tempFCalculation($event)">
+      <span>Fahrenheit</span>
+    </div>
+  </div>
+</div>
