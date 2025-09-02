@@ -1,8 +1,8 @@
 # Ng7Guis
 
-## !! IMPORTANT NOTE!!
+## !! IMPORTANT NOTE !!
 
-Please, don't estimate my skills too much basing on the implementation here. Everything here was done because of boredom working in yellow russian bank in 2023. After some gap finished in 2025. Because of this old Angular 16.2 is used without all fabolous features like flow control, standalone components and etc. I prefer bootstrap, so I used it for styles. 
+Please, don't rate my skills too much basing on the implementation here. Everything here was done because of boredom working in yellow russian bank in 2023. After some gap finished in 2025. Because of this old Angular 16.2 is used without all fabolous features like flow control, standalone components and etc. I prefer bootstrap, so I used it for styles. 
 
 Based on https://7guis.bradwoods.io/. Algorithms are mine, but layout I stole from their examples. 
 
